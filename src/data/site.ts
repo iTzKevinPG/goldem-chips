@@ -81,9 +81,9 @@ export const siteCopy = {
     activeIndex: 0,
     items: [
       {
-        name: "Papa clasica",
-        body: "La de toda la vida. Rodaja fina, freida al punto, sal justa. Cruje y no para.",
-        kicker: "El antojo de siempre, recien hecho.",
+        name: "Papa clásica",
+        body: "La de toda la vida. Rodaja fina, freída al punto, sal justa. Cruje y no para.",
+        kicker: "El antojo de siempre, recién hecho.",
         badges: ["Papa fresca", "Sal de grano", "Aceite limpio"],
       },
       {
@@ -102,23 +102,23 @@ export const siteCopy = {
   },
   process: {
     index: "02",
-    eyebrow: "Como las hacemos",
+    eyebrow: "C\u00f3mo las hacemos",
     title: {
-      prefix: "El diferenciador esta en",
-      accent: "como",
+      prefix: "El diferenciador est\u00e1 en",
+      accent: "c\u00f3mo",
     },
     items: [
       {
         title: "A mano",
-        body: "Nada de maquina sin alma. Cada lote pasa por manos que saben.",
+        body: "Nada de m\u00e1quina sin alma. Cada lote pasa por manos que saben.",
       },
       {
-        title: "Pequenos lotes",
+        title: "Peque\u00f1os lotes",
         body: "Chiquitos y seguido. Frescas hoy, no apiladas en bodega.",
       },
       {
         title: "Ingredientes naturales",
-        body: "Producto, aceite limpio y sal. Sin quimica de mas, sin secretos.",
+        body: "Producto, aceite limpio y sal. Sin qu\u00edmica de m\u00e1s, sin secretos.",
       },
     ],
   },

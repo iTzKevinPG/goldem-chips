@@ -7,6 +7,8 @@ type Props = {
 
 const { copy } = Astro.props;
 const activeFlavor = copy.items[copy.activeIndex];
+const [titleLead, ...titleRest] = activeFlavor.name.split(" ");
+const titleAccent = titleRest.join(" ");
 ---
 
 <section class="scene scene--light flavors" id="gc-sabores">
@@ -16,19 +18,25 @@ const activeFlavor = copy.items[copy.activeIndex];
         <span class="gc-eyebrow__num">{copy.index}</span>{copy.eyebrow}
       </p>
       <h2 class="flavors__title" data-reveal data-delay="80">
-        <span>{activeFlavor.name.split(" ")[0]}</span>
-        <em>{activeFlavor.name.replace(`${activeFlavor.name.split(" ")[0]} `, "")}</em>
+        <span>{titleLead}</span>
+        <em>{titleAccent}</em>
       </h2>
       <p class="flavors__body" data-reveal data-delay="140">{activeFlavor.body}</p>
-      <p class="flavors__kicker" data-reveal data-delay="180">{activeFlavor.kicker}</p>
       <ul class="flavors__badges" data-reveal data-delay="220" aria-label={`Detalles de ${activeFlavor.name}`}>
         {activeFlavor.badges.map((badge) => <li class="gc-pill">{badge}</li>)}
       </ul>
     </div>
 
-    <div class="flavors__visual" aria-hidden="true" data-reveal data-delay="120">
+    <div class="flavors__visual" data-reveal data-delay="120">
       <div class="flavors__halo"></div>
-      <div class="flavors__chip"></div>
+      <div class="flavors__card">
+        <div class="flavors__chip-wrap" aria-hidden="true">
+          <div class="flavors__chip">
+            <div class="flavors__chip-rings"></div>
+          </div>
+        </div>
+        <p class="flavors__hover-note">{activeFlavor.kicker}</p>
+      </div>
     </div>
   </div>
 </section>
