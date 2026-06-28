@@ -269,13 +269,8 @@
 .flavors__chip {
   position: absolute;
   border-radius: 52% 48% 56% 44% / 60% 56% 44% 40%;
-  background:
-    radial-gradient(circle at 36% 28%, #ffe28d 0%, rgba(255, 226, 141, 0.56) 16%, transparent 17%),
-    radial-gradient(circle at 42% 34%, #f6c221 0%, #e6b41f 55%, #9f6e18 100%);
-  box-shadow:
-    inset 0 -18px 22px rgba(120, 72, 18, 0.48),
-    inset 0 12px 16px rgba(255, 245, 191, 0.38),
-    0 28px 56px rgba(0, 0, 0, 0.28);
+  background: radial-gradient(circle at 42% 34%, #f6c221 0%, #e6b41f 55%, #9f6e18 100%);
+  box-shadow: 0 28px 56px rgba(0, 0, 0, 0.28);
 }
 
 .hero__chip::after {
@@ -292,6 +287,11 @@
   width: 172px;
   height: 140px;
   border-radius: 48% 52% 46% 54% / 58% 60% 40% 42%;
+  background: radial-gradient(58% 54% at 38% 30%, #fcd058 0%, #f6c221 42%, #c9941f 72%, #9c6f1c 100%);
+  box-shadow:
+    inset 0 -12px 22px rgba(120, 72, 18, 0.55),
+    inset 0 10px 16px rgba(255, 244, 200, 0.75),
+    0 28px 48px rgba(0, 0, 0, 0.45);
   animation: heroFloatA 7.5s ease-in-out infinite;
 }
 
@@ -301,6 +301,11 @@
   width: 214px;
   height: 176px;
   border-radius: 52% 48% 56% 44% / 60% 56% 44% 40%;
+  background: radial-gradient(56% 52% at 36% 30%, #fcd058 0%, #f6c221 40%, #d29b1e 70%, #9c6f1c 100%);
+  box-shadow:
+    inset 0 -14px 26px rgba(120, 72, 18, 0.55),
+    inset 0 12px 18px rgba(255, 244, 200, 0.78),
+    0 34px 56px rgba(0, 0, 0, 0.5);
   animation: heroFloatB 9s ease-in-out infinite;
 }
 
@@ -310,6 +315,11 @@
   width: 120px;
   height: 100px;
   border-radius: 50% 50% 44% 56% / 56% 58% 42% 44%;
+  background: radial-gradient(58% 54% at 40% 32%, #fcd058 0%, #efb726 46%, #b9851b 100%);
+  box-shadow:
+    inset 0 -9px 16px rgba(120, 72, 18, 0.5),
+    inset 0 8px 12px rgba(255, 244, 200, 0.7),
+    0 20px 36px rgba(0, 0, 0, 0.4);
   animation: heroFloatC 8s ease-in-out infinite;
 }
 
@@ -319,6 +329,11 @@
   width: 142px;
   height: 120px;
   border-radius: 46% 54% 52% 48% / 58% 52% 48% 42%;
+  background: radial-gradient(58% 54% at 38% 30%, #fcd058 0%, #f6c221 44%, #c9941f 100%);
+  box-shadow:
+    inset 0 -10px 18px rgba(120, 72, 18, 0.5),
+    inset 0 9px 14px rgba(255, 244, 200, 0.72),
+    0 24px 40px rgba(0, 0, 0, 0.42);
   animation: heroFloatD 8.5s ease-in-out infinite;
 }
 
@@ -476,93 +491,141 @@
   align-items: center;
   justify-content: center;
   background: linear-gradient(180deg, #17120f 0%, #221b18 50%, #17120f 100%);
+  min-height: 118vh;
+  padding: 140px 24px;
 }
 
 .manifesto__inner {
   z-index: 1;
   text-align: center;
+  max-width: 1080px;
 }
 
 .manifesto__eyebrow {
+  display: inline-flex;
+  align-items: center;
   justify-content: center;
+  gap: 0.45rem;
+  margin: 0 0 1.3rem;
+  font-family: var(--font-label);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.3em;
+  font-size: 12px;
   color: var(--gold);
+  line-height: 1;
 }
 
 .manifesto__title {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 0.15em;
-  margin-top: 1.3rem;
+  gap: 0.03em;
+  max-width: 900px;
+  margin: 0 auto;
 }
 
 .manifesto__line {
   display: block;
   font-family: var(--font-display);
-  font-size: clamp(4.8rem, 8vw, 6.9rem);
+  font-size: clamp(56px, 8vw, 110px);
   font-weight: 600;
-  line-height: 0.94;
-  color: #f8efe1;
+  line-height: 0.92;
+  letter-spacing: -0.02em;
+  color: #f7efe1;
 }
 
 .manifesto__line--accent {
-  color: var(--gold);
+  color: #f6c221;
   font-style: italic;
 }
 
-.manifesto__facts {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 1.4rem;
-  max-width: 66rem;
-  margin: 5rem auto 0;
-}
-
-.manifesto__fact {
-  color: rgba(248, 226, 146, 0.76);
-}
-
-.manifesto__fact h3 {
-  margin: 0 0 0.65rem;
-  font-family: var(--font-display);
-  font-size: 1.5rem;
-  color: #f8efe1;
-}
-
 .manifesto__chip {
-  opacity: 0.9;
+  background: radial-gradient(58% 54% at 40% 32%, #fcd058, #e0a91e 60%, #9c6f1c);
+  box-shadow: 0 24px 44px rgba(0, 0, 0, 0.5);
 }
 
 .manifesto__chip--top-left {
-  top: 20%;
   left: 8%;
-  width: 8.3rem;
-  height: 6.9rem;
+  top: 18%;
+  width: 130px;
+  height: 108px;
+  border-radius: 50% 50% 44% 56% / 56% 58% 42% 44%;
+  opacity: 0.85;
+  background: radial-gradient(58% 54% at 40% 32%, #fcd058, #e0a91e 60%, #9c6f1c);
+  box-shadow: 0 24px 44px rgba(0, 0, 0, 0.5);
   animation: heroFloatA 10s ease-in-out infinite;
 }
 
 .manifesto__chip--top-right {
-  top: 28%;
-  right: 11%;
-  width: 6.2rem;
-  height: 5.1rem;
+  right: 10%;
+  top: 24%;
+  width: 90px;
+  height: 76px;
+  border-radius: 48% 52% 50% 50% / 58% 56% 44% 42%;
+  opacity: 0.7;
+  background: radial-gradient(58% 54% at 40% 32%, #fcd058, #d29b1e 70%, #8f6418);
+  box-shadow: 0 18px 34px rgba(0, 0, 0, 0.5);
   animation: heroFloatB 9s ease-in-out infinite;
 }
 
 .manifesto__chip--bottom-left {
-  bottom: 1.4rem;
   left: 16%;
-  width: 3.8rem;
-  height: 3.2rem;
+  bottom: 14%;
+  width: 64px;
+  height: 54px;
+  border-radius: 50%;
+  opacity: 0.6;
+  background: radial-gradient(58% 54% at 40% 32%, #fcd058, #c9941f);
+  box-shadow: 0 14px 26px rgba(0, 0, 0, 0.45);
   animation: heroFloatC 8s ease-in-out infinite;
 }
 
 .manifesto__chip--bottom-right {
-  right: 22%;
-  bottom: 5rem;
-  width: 8.7rem;
-  height: 7.3rem;
+  right: 18%;
+  bottom: 20%;
+  width: 150px;
+  height: 124px;
+  border-radius: 52% 48% 54% 46% / 60% 56% 44% 40%;
+  opacity: 0.8;
+  background: radial-gradient(56% 52% at 36% 30%, #fcd058, #e8b221 55%, #9c6f1c);
+  box-shadow: 0 28px 50px rgba(0, 0, 0, 0.52);
   animation: heroFloatD 11s ease-in-out infinite;
+}
+
+.manifesto__chip--top-left::after,
+.manifesto__chip--top-right::after,
+.manifesto__chip--bottom-left::after,
+.manifesto__chip--bottom-right::after {
+  display: none;
+}
+
+@media (max-width: 920px) {
+  .manifesto {
+    min-height: auto;
+    padding: 120px 24px 100px;
+  }
+
+  .manifesto__chip--top-left,
+  .manifesto__chip--top-right {
+    display: none;
+  }
+}
+
+@media (max-width: 640px) {
+  .manifesto__line {
+    font-size: clamp(3rem, 11vw, 4.3rem);
+  }
+
+  .manifesto__chip--bottom-left {
+    left: 8%;
+    bottom: 10%;
+  }
+
+  .manifesto__chip--bottom-right {
+    right: 10%;
+    bottom: 12%;
+  }
 }
 
 .flavors {

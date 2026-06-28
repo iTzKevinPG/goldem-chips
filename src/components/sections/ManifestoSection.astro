@@ -15,7 +15,7 @@ const { copy } = Astro.props;
   <div class="manifesto__chip manifesto__chip--bottom-right" aria-hidden="true"></div>
 
   <div class="gc-container manifesto__inner">
-    <p class="gc-eyebrow manifesto__eyebrow" data-reveal>
+    <p class="manifesto__eyebrow" data-reveal>
       <span class="gc-eyebrow__num">{copy.index}</span>{copy.eyebrow}
     </p>
 
@@ -25,17 +25,6 @@ const { copy } = Astro.props;
           <span class:list={["manifesto__line", line.accent && "manifesto__line--accent"]}>
             {line.text}
           </span>
-        ))
-      }
-    </div>
-
-    <div class="manifesto__facts" data-reveal data-delay="180">
-      {
-        copy.items.map((item) => (
-          <article class="manifesto__fact">
-            <h3>{item.title}</h3>
-            <p>{item.body}</p>
-          </article>
         ))
       }
     </div>
