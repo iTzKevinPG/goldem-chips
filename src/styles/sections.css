@@ -820,7 +820,7 @@
 .process-wrap {
   --process-progress: 0;
   position: relative;
-  height: 190vh;
+  height: 165vh;
   background: linear-gradient(180deg, #17120f 0%, #221b18 50%, #17120f 100%);
 }
 
@@ -838,7 +838,68 @@
 .process__inner,
 .where__inner,
 .final-cta__inner {
+  position: relative;
+  z-index: 1;
   text-align: center;
+}
+
+.process__chip {
+  position: absolute;
+  z-index: 0;
+  border-radius: 52% 48% 54% 46% / 60% 56% 44% 40%;
+  background: radial-gradient(58% 54% at 40% 32%, #f7cc58 0%, #d49a24 60%, #805818 100%);
+  box-shadow:
+    inset 0 -10px 18px rgba(89, 52, 12, 0.34),
+    inset 0 8px 12px rgba(255, 240, 180, 0.18),
+    0 22px 40px rgba(0, 0, 0, 0.28);
+  pointer-events: none;
+  will-change: transform, opacity;
+  transition:
+    transform 120ms linear,
+    opacity 120ms linear;
+}
+
+.process__chip--top-left {
+  top: 8%;
+  left: -2%;
+  width: 138px;
+  height: 114px;
+  border-radius: 50% 50% 44% 56% / 56% 58% 42% 44%;
+  opacity: 0.26;
+  transform: translate3d(
+    calc((var(--process-progress) - 0.5) * -42px),
+    calc((var(--process-progress) - 0.5) * 68px),
+    0
+  );
+}
+
+.process__chip--top-right {
+  top: 14%;
+  right: 2%;
+  width: 104px;
+  height: 88px;
+  border-radius: 48% 52% 50% 50% / 58% 56% 44% 42%;
+  opacity: 0.18;
+  transform: translate3d(
+    calc((var(--process-progress) - 0.5) * 36px),
+    calc((var(--process-progress) - 0.5) * -52px),
+    0
+  );
+}
+
+.process__chip--bottom-left {
+  left: auto;
+  right: 10%;
+  bottom: 6%;
+  width: 88px;
+  height: 74px;
+  border-radius: 52% 48% 54% 46% / 60% 56% 44% 40%;
+  opacity: 0.16;
+  transform: translate3d(
+    calc((var(--process-progress) - 0.5) * -24px),
+    calc((var(--process-progress) - 0.5) * 44px),
+    0
+  );
 }
 
 .process__eyebrow {
@@ -1327,6 +1388,19 @@
     right: 14%;
   }
 
+  .process__chip--top-left {
+    left: -5%;
+  }
+
+  .process__chip--top-right {
+    right: -1%;
+  }
+
+  .process__chip--bottom-left {
+    right: 5%;
+    bottom: 4%;
+  }
+
   .process__beats {
     gap: 24px;
   }
@@ -1385,6 +1459,18 @@
     display: none;
   }
 
+  .process__chip--top-left,
+  .process__chip--top-right {
+    display: none;
+  }
+
+  .process__chip--bottom-left {
+    right: 4%;
+    bottom: 7%;
+    width: 64px;
+    height: 54px;
+  }
+
   .process__beats {
     grid-template-columns: 1fr;
     gap: 1.8rem;
@@ -1435,7 +1521,12 @@
   .flavors__hover-note,
   .process__beat,
   .process__beat-num,
-  .process__line-active {
+  .process__line-active,
+  .process__chip {
     transition: none;
+  }
+
+  .process__chip {
+    transform: none;
   }
 }

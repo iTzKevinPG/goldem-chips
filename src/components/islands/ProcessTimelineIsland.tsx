@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 
-const STEP_THRESHOLDS = [0.12, 0.42, 0.72];
+const STEP_THRESHOLDS = [0.08, 0.36, 0.64];
 
 export default function ProcessTimelineIsland() {
   useEffect(() => {
