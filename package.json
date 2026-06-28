@@ -1,0 +1,25 @@
+{
+  "name": "goldem-chips-web-page",
+  "type": "module",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "check": "astro sync && npx @astrojs/check",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "@astrojs/react": "^6.0.0",
+    "astro": "^7.0.3",
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0"
+  },
+  "devDependencies": {
+    "@astrojs/check": "^0.9.9",
+    "@types/react": "^19.2.2",
+    "@types/react-dom": "^19.2.2",
+    "typescript": "^5.9.2"
+  }
+}

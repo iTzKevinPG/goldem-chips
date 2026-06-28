@@ -1,0 +1,38 @@
+---
+import type { SiteCopy } from "@/data/site";
+
+type Props = {
+  copy: SiteCopy["process"];
+};
+
+const { copy } = Astro.props;
+---
+
+<section class="scene scene--dark process" id="gc-como">
+  <div class="gc-container process__inner">
+    <p class="gc-eyebrow process__eyebrow" data-reveal>
+      <span class="gc-eyebrow__num">{copy.index}</span>{copy.eyebrow}
+    </p>
+    <h2 class="process__title" data-reveal data-delay="80">
+      <span>{copy.title.prefix}</span>
+      <em>{copy.title.accent}</em>
+    </h2>
+
+    <div class="process__timeline" data-reveal data-delay="160" aria-hidden="true">
+      <span class="process__timeline-line"></span>
+      {copy.items.map((_, index) => <span class="process__timeline-node">{`0${index + 1}`}</span>)}
+    </div>
+
+    <div class="process__cards">
+      {
+        copy.items.map((item, index) => (
+          <article class="process__card" data-reveal data-delay={220 + index * 60}>
+            <div class="process__card-index">{`0${index + 1}`}</div>
+            <h3>{item.title}</h3>
+            <p>{item.body}</p>
+          </article>
+        ))
+      }
+    </div>
+  </div>
+</section>

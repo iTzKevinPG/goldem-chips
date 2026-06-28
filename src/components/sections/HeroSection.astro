@@ -1,0 +1,49 @@
+---
+import type { SiteCopy } from "@/data/site";
+
+type Props = {
+  copy: SiteCopy["hero"];
+  brand: SiteCopy["brand"];
+};
+
+const { copy, brand } = Astro.props;
+---
+
+<section class="scene scene--dark hero" id="gc-hero">
+  <div class="hero__glow" aria-hidden="true"></div>
+  <div class="hero__stage gc-container">
+    <div class="hero__chip hero__chip--top-left" aria-hidden="true"></div>
+    <div class="hero__chip hero__chip--top-right" aria-hidden="true"></div>
+    <div class="hero__chip hero__chip--bottom-left" aria-hidden="true"></div>
+    <div class="hero__chip hero__chip--bottom-right" aria-hidden="true"></div>
+
+    <div class="hero__content">
+      <img
+        class="hero__logo"
+        src={brand.logo}
+        alt={brand.name}
+        width="320"
+        height="210"
+        loading="eager"
+        data-reveal
+      />
+      <p class="hero__eyebrow" data-reveal data-delay="80">{copy.eyebrow}</p>
+      <h1 class="hero__title" data-reveal data-delay="140">
+        <span>{copy.title.prefix}</span>
+        <em>{copy.title.accent}</em>
+      </h1>
+      <p class="hero__lead" data-reveal data-delay="200">{copy.body}</p>
+      <div class="hero__actions" data-reveal data-delay="260">
+        <a class="gc-btn gc-btn--primary" href={copy.primaryCta.href}>{copy.primaryCta.label}</a>
+        <a class="gc-btn hero__secondary" href={copy.secondaryCta.href}>
+          {copy.secondaryCta.label}
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <a class="hero__scroll" href="#gc-manifiesto" data-smooth-link aria-label="Ir al manifiesto">
+    <span>{copy.scrollHint}</span>
+    <span aria-hidden="true">&darr;</span>
+  </a>
+</section>

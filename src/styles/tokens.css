@@ -1,0 +1,50 @@
+@import url("https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500;1,9..144,600&family=Oswald:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap");
+
+:root {
+  --cacao: #693127;
+  --terra: #a25242;
+  --charcoal: #201c1d;
+  --gold: #f6c221;
+  --gold-light: #fcd058;
+  --bronze: #ae7c2e;
+  --cream: #f8e292;
+  --paper: #fbf6e6;
+  --paper-2: #fffdf7;
+  --ink: #2a1a12;
+  --ink-soft: #6b5648;
+  --line: rgba(105, 49, 39, 0.16);
+  --cacao-hover: #54271f;
+  --gold-hover: #e2ae12;
+
+  --bg: var(--paper);
+  --surface: var(--paper-2);
+  --text: var(--ink);
+  --text-muted: var(--ink-soft);
+  --accent: var(--gold);
+  --on-accent: var(--charcoal);
+  --border: var(--line);
+
+  --font-display: "Fraunces", Georgia, "Times New Roman", serif;
+  --font-label: "Oswald", system-ui, sans-serif;
+  --font-body: "Inter", system-ui, -apple-system, sans-serif;
+
+  --fs-display: clamp(3rem, 8vw, 5.75rem);
+  --fs-h2: clamp(2.2rem, 5vw, 3.4rem);
+  --fs-h3: clamp(1.5rem, 3vw, 1.8rem);
+  --fs-body: 1.0625rem;
+  --fs-small: 0.8125rem;
+
+  --maxw: 1120px;
+  --radius: 16px;
+  --radius-lg: 24px;
+  --radius-pill: 999px;
+  --space-1: 0.5rem;
+  --space-2: 1rem;
+  --space-3: 1.5rem;
+  --space-4: 2.5rem;
+  --space-5: 4rem;
+  --space-6: 6rem;
+  --space-7: 8rem;
+  --shadow-soft: 0 20px 50px rgba(32, 28, 29, 0.08);
+  --shadow-strong: 0 30px 80px rgba(32, 28, 29, 0.18);
+}

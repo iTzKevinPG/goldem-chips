@@ -1,0 +1,36 @@
+---
+import type { SiteCopy } from "@/data/site";
+
+type Props = {
+  copy: SiteCopy["footer"];
+  brand: SiteCopy["brand"];
+};
+
+const { copy, brand } = Astro.props;
+---
+
+<footer class="site-footer">
+  <div class="gc-container site-footer__inner">
+    <div class="site-footer__brand-block">
+      <h2 class="site-footer__title">
+        <span>El verdadero</span>
+        <em>sabor.</em>
+      </h2>
+      <div class="site-footer__rule"></div>
+      <div class="site-footer__brand-row">
+        <div class="site-footer__oval-group" aria-hidden="true">
+          <span class="site-footer__oval site-footer__oval--filled"></span>
+          <span class="site-footer__oval site-footer__oval--outline"></span>
+        </div>
+        <img class="site-footer__logo" src={brand.logo} alt={brand.name} width="88" height="48" />
+      </div>
+      <p class="site-footer__note">{copy.note}</p>
+    </div>
+
+    <nav class="site-footer__nav" aria-label="Redes sociales">
+      <ul class="site-footer__links">
+        {copy.links.map((link) => <li><a href={link.href}>{link.label}</a></li>)}
+      </ul>
+    </nav>
+  </div>
+</footer>

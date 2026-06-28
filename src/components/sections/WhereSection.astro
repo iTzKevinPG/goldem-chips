@@ -1,0 +1,33 @@
+---
+import type { SiteCopy } from "@/data/site";
+
+type Props = {
+  copy: SiteCopy["locations"];
+};
+
+const { copy } = Astro.props;
+---
+
+<section class="scene scene--light where" id="gc-donde">
+  <div class="gc-container where__inner">
+    <p class="gc-eyebrow where__eyebrow" data-reveal>
+      <span class="gc-eyebrow__num">{copy.index}</span>{copy.eyebrow}
+    </p>
+    <h2 class="where__title" data-reveal data-delay="80">
+      <span>{copy.title.prefix}</span>
+      <em>{copy.title.accent}</em>
+    </h2>
+
+    <div class="where__grid">
+      {
+        copy.items.map((item, index) => (
+          <article class="where__card" data-reveal data-delay={160 + index * 70}>
+            <div class="where__seal">{item.title}</div>
+            <h3>{item.subtitle}</h3>
+            <p>{item.body}</p>
+          </article>
+        ))
+      }
+    </div>
+  </div>
+</section>

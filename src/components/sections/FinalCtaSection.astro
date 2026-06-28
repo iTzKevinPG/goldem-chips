@@ -1,0 +1,25 @@
+---
+import type { SiteCopy } from "@/data/site";
+
+type Props = {
+  copy: SiteCopy["finalCta"];
+};
+
+const { copy } = Astro.props;
+---
+
+<section class="scene scene--accent final-cta" id="gc-final">
+  <div class="final-cta__glow" aria-hidden="true"></div>
+  <div class="gc-container final-cta__inner">
+    <p class="gc-eyebrow final-cta__eyebrow" data-reveal>{copy.eyebrow}</p>
+    <h2 class="final-cta__title" data-reveal data-delay="80">
+      <span>{copy.title.prefix}</span>
+      <em>{copy.title.accent}</em>
+    </h2>
+    <p class="final-cta__body" data-reveal data-delay="140">{copy.body}</p>
+    <div class="final-cta__actions" data-reveal data-delay="220">
+      <a class="gc-btn final-cta__primary" href={copy.primary.href}>{copy.primary.label}</a>
+      <a class="gc-btn final-cta__secondary" href={copy.secondary.href}>{copy.secondary.label}</a>
+    </div>
+  </div>
+</section>

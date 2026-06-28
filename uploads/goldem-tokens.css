@@ -1,0 +1,164 @@
+/* ============================================================
+   GOLDEM CHIP'S — Tokens de diseño (drop-in)
+   "El verdadero sabor"
+   Carga este archivo o copia el bloque :root en cualquier
+   web/pieza para que herede la identidad de la marca.
+   Reglas completas en: goldem-chips-design-system.md
+   ============================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500;1,9..144,600&family=Oswald:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap');
+
+:root{
+  /* --- Color: núcleo (extraído del logo) --- */
+  --cacao:#693127;        /* protagonista: textos, titulares, logo */
+  --terra:#A25242;        /* apoyo del lettering */
+  --charcoal:#201C1D;     /* contraste fuerte */
+  --gold:#F6C221;         /* acento principal (usar poco) */
+  --gold-light:#FCD058;   /* resaltes suaves / hover */
+  --bronze:#AE7C2E;       /* acento 2: detalles, eyebrows */
+  --cream:#F8E292;        /* fondos cálidos, sellos, tags */
+
+  /* --- Color: derivados de trabajo --- */
+  --paper:#FBF6E6;        /* FONDO base de la web */
+  --paper-2:#FFFDF7;      /* superficies / tarjetas */
+  --ink:#2A1A12;          /* texto de cuerpo */
+  --ink-soft:#6B5648;     /* texto secundario / muted */
+  --line:rgba(105,49,39,.16);   /* bordes y divisores */
+  --cacao-hover:#54271F;  /* hover de cacao */
+  --gold-hover:#E2AE12;   /* hover de oro */
+
+  /* --- Roles semánticos (usa estos en componentes) --- */
+  --bg:var(--paper);
+  --surface:var(--paper-2);
+  --text:var(--ink);
+  --text-muted:var(--ink-soft);
+  --accent:var(--gold);
+  --on-accent:var(--charcoal);
+  --border:var(--line);
+
+  /* --- Tipografía --- */
+  --font-display:'Fraunces', Georgia, 'Times New Roman', serif;
+  --font-label:'Oswald', system-ui, sans-serif;
+  --font-body:'Inter', system-ui, -apple-system, sans-serif;
+
+  /* Escala de tamaño */
+  --fs-display:clamp(34px, 5.5vw, 58px);
+  --fs-h2:clamp(28px, 4vw, 44px);
+  --fs-h3:22px;
+  --fs-body:17px;
+  --fs-small:13px;
+
+  /* --- Layout --- */
+  --maxw:1080px;
+  --radius:14px;
+  --radius-lg:18px;
+  --radius-pill:40px;
+  --space-1:8px; --space-2:16px; --space-3:24px; --space-4:40px; --space-5:64px; --space-6:88px;
+  --shadow-soft:0 14px 30px rgba(32,28,29,.12);
+}
+
+/* ============================================================
+   Base + componentes de marca (opcionales pero recomendados)
+   ============================================================ */
+
+body{
+  background:var(--bg);
+  color:var(--text);
+  font-family:var(--font-body);
+  font-size:var(--fs-body);
+  line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+}
+
+.gc-container{max-width:var(--maxw);margin:0 auto;padding:0 28px}
+.gc-section{padding:var(--space-6) 0;border-top:1px solid var(--border)}
+
+/* Titulares */
+.gc-display{font-family:var(--font-display);font-weight:600;font-size:var(--fs-display);line-height:1.05;color:var(--cacao);letter-spacing:-.01em}
+/* Énfasis en cursiva. Sobre fondo claro el ORO es ilegible (contraste ~1.3:1),
+   así que sobre papel usamos bronce (cumple AA en texto grande). El oro vuelve
+   a brillar solo sobre superficies oscuras (ver .gc-dark / .gc-hero abajo). */
+.gc-display em{font-style:italic;color:var(--bronze)}
+.gc-h2{font-family:var(--font-display);font-weight:600;font-size:var(--fs-h2);line-height:1.05;color:var(--cacao)}
+.gc-h3{font-family:var(--font-display);font-weight:600;font-size:var(--fs-h3);color:var(--cacao)}
+
+/* Eyebrow (etiqueta de sección) */
+.gc-eyebrow{font-family:var(--font-label);font-weight:600;text-transform:uppercase;letter-spacing:.2em;font-size:13px;color:var(--bronze)}
+
+/* Cuerpo */
+.gc-lead{font-size:19px;max-width:62ch;color:var(--text-muted)}
+.gc-muted{color:var(--text-muted)}
+
+/* Botones */
+.gc-btn{display:inline-block;font-family:var(--font-label);font-weight:600;text-transform:uppercase;letter-spacing:.08em;font-size:14px;padding:13px 24px;border-radius:var(--radius-pill);border:0;cursor:pointer;text-decoration:none;transition:background .15s ease,transform .1s ease}
+.gc-btn--primary{background:var(--gold);color:var(--charcoal)}
+.gc-btn--primary:hover{background:var(--gold-hover)}
+.gc-btn--outline{background:transparent;color:var(--cacao);border:1.5px solid var(--cacao)}
+.gc-btn--outline:hover{background:var(--cacao);color:var(--paper)}
+.gc-btn:active{transform:scale(.98)}
+
+/* Tarjetas, píldoras */
+.gc-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-lg);padding:26px;box-shadow:var(--shadow-soft)}
+.gc-pill{display:inline-block;font-family:var(--font-label);font-weight:600;text-transform:uppercase;letter-spacing:.06em;font-size:12.5px;color:var(--cacao);background:var(--cream);border:1px solid var(--border);padding:7px 14px;border-radius:var(--radius-pill)}
+
+/* Estado deshabilitado de botones */
+.gc-btn:disabled,.gc-btn[aria-disabled="true"]{opacity:.5;cursor:not-allowed;pointer-events:none}
+
+/* Eyebrow con número (índice de sección): ej. <span class="gc-eyebrow__num">01</span> ESENCIA */
+.gc-eyebrow__num{font-family:var(--font-display);font-style:italic;font-weight:600;color:var(--bronze);margin-right:8px}
+
+/* Enlaces de contenido */
+a{color:var(--cacao);text-decoration:underline;text-underline-offset:3px;text-decoration-thickness:1px;text-decoration-color:var(--line);transition:color .15s ease}
+a:hover{color:var(--bronze);text-decoration-color:currentColor}
+
+/* ---- Header / navegación (sticky, fondo papel translúcido) ---- */
+.gc-header{position:sticky;top:0;z-index:50;background:rgba(251,246,230,.85);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);border-bottom:1px solid var(--border)}
+.gc-header__inner{display:flex;align-items:center;justify-content:space-between;gap:var(--space-3);min-height:64px}
+.gc-brand{display:inline-flex;align-items:center;gap:10px;font-family:var(--font-display);font-weight:600;font-size:20px;color:var(--cacao);text-decoration:none}
+.gc-brand img{height:36px;width:auto;display:block}
+.gc-nav{display:flex;align-items:center;gap:var(--space-3)}
+.gc-nav a{font-family:var(--font-label);font-weight:600;text-transform:uppercase;letter-spacing:.08em;font-size:13px;color:var(--cacao);text-decoration:none}
+.gc-nav a:hover{color:var(--bronze)}
+
+/* ---- Sección / hero oscuro (carbón con resplandor radial bronce) ---- */
+.gc-dark{background:var(--charcoal);color:var(--cream)}
+.gc-hero{position:relative;overflow:hidden;background:var(--charcoal);color:var(--cream);padding:var(--space-6) 0}
+.gc-hero::before{content:"";position:absolute;inset:0;background:radial-gradient(60% 80% at 30% 30%,rgba(174,124,46,.45),transparent 70%);pointer-events:none}
+.gc-hero .gc-container{position:relative}
+/* En contexto oscuro el texto se invierte y el oro recupera su brillo */
+.gc-dark .gc-display,.gc-hero .gc-display,
+.gc-dark .gc-h2,.gc-hero .gc-h2,
+.gc-dark .gc-h3,.gc-hero .gc-h3{color:var(--paper)}
+.gc-dark .gc-display em,.gc-hero .gc-display em{color:var(--gold)}
+.gc-dark .gc-eyebrow,.gc-hero .gc-eyebrow{color:var(--gold-light)}
+.gc-dark .gc-lead,.gc-hero .gc-lead,
+.gc-dark .gc-muted,.gc-hero .gc-muted{color:rgba(248,226,146,.85)}
+.gc-dark .gc-section,.gc-hero .gc-section{border-top-color:rgba(248,226,146,.18)}
+.gc-dark a,.gc-hero a{color:var(--gold-light)}
+
+/* ---- Footer ---- */
+.gc-footer{background:var(--charcoal);color:var(--cream);padding:var(--space-5) 0}
+.gc-footer a{color:var(--gold-light);text-decoration:none}
+.gc-footer a:hover{text-decoration:underline}
+.gc-footer .gc-muted{color:rgba(248,226,146,.7)}
+
+/* ---- Formularios ---- */
+.gc-field{display:flex;flex-direction:column;gap:6px;margin-bottom:var(--space-2)}
+.gc-label{font-family:var(--font-label);font-weight:600;text-transform:uppercase;letter-spacing:.08em;font-size:12.5px;color:var(--cacao)}
+.gc-input,.gc-textarea,.gc-select{font-family:var(--font-body);font-size:16px;color:var(--ink);background:var(--paper-2);border:1.5px solid var(--border);border-radius:var(--radius);padding:12px 14px;width:100%;transition:border-color .15s ease,box-shadow .15s ease}
+.gc-input::placeholder,.gc-textarea::placeholder{color:var(--ink-soft)}
+.gc-input:focus,.gc-textarea:focus,.gc-select:focus{outline:none;border-color:var(--bronze);box-shadow:0 0 0 3px rgba(174,124,46,.18)}
+.gc-textarea{min-height:120px;resize:vertical}
+
+/* ---- Sello circular (motivo de firma de la marca) ---- */
+.gc-seal{display:inline-flex;align-items:center;justify-content:center;text-align:center;width:108px;height:108px;padding:10px;border-radius:50%;background:var(--cream);color:var(--cacao);border:2px solid var(--bronze);font-family:var(--font-label);font-weight:600;text-transform:uppercase;letter-spacing:.08em;font-size:13px;line-height:1.15;box-shadow:var(--shadow-soft)}
+.gc-seal--gold{background:var(--gold);color:var(--charcoal);border-color:var(--gold-hover)}
+.gc-seal--dark{background:var(--charcoal);color:var(--gold-light);border-color:var(--bronze)}
+
+/* Responsive: en móvil la navegación cede a un menú propio del sitio */
+@media (max-width:640px){.gc-nav{display:none}}
+
+/* Foco accesible */
+:focus-visible{outline:3px solid var(--gold);outline-offset:3px;border-radius:6px}
+
+@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}

@@ -1,0 +1,36 @@
+---
+import FloatingCtaIsland from "@/components/islands/FloatingCtaIsland";
+import RevealControllerIsland from "@/components/islands/RevealControllerIsland";
+import SceneRailIsland from "@/components/islands/SceneRailIsland";
+import StickyNavIsland from "@/components/islands/StickyNavIsland";
+import FinalCtaSection from "@/components/sections/FinalCtaSection.astro";
+import FlavorsSection from "@/components/sections/FlavorsSection.astro";
+import FooterSection from "@/components/sections/FooterSection.astro";
+import HeroSection from "@/components/sections/HeroSection.astro";
+import ManifestoSection from "@/components/sections/ManifestoSection.astro";
+import ProcessSection from "@/components/sections/ProcessSection.astro";
+import WhereSection from "@/components/sections/WhereSection.astro";
+import { siteCopy } from "@/data/site";
+import BaseLayout from "@/layouts/BaseLayout.astro";
+---
+
+<BaseLayout title={siteCopy.meta.title} description={siteCopy.meta.description}>
+  <StickyNavIsland
+    brand={siteCopy.brand}
+    navItems={siteCopy.nav}
+    cta={siteCopy.hero.headerCta}
+    client:load
+  />
+  <SceneRailIsland items={siteCopy.scenes} client:load />
+  <main>
+    <HeroSection copy={siteCopy.hero} brand={siteCopy.brand} />
+    <ManifestoSection copy={siteCopy.manifesto} />
+    <FlavorsSection copy={siteCopy.flavors} />
+    <ProcessSection copy={siteCopy.process} />
+    <WhereSection copy={siteCopy.locations} />
+    <FinalCtaSection copy={siteCopy.finalCta} />
+  </main>
+  <FooterSection copy={siteCopy.footer} brand={siteCopy.brand} />
+  <FloatingCtaIsland cta={siteCopy.hero.primaryCta} client:load />
+  <RevealControllerIsland client:load />
+</BaseLayout>

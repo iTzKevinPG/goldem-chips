@@ -1,0 +1,34 @@
+---
+import type { SiteCopy } from "@/data/site";
+
+type Props = {
+  copy: SiteCopy["flavors"];
+};
+
+const { copy } = Astro.props;
+const activeFlavor = copy.items[copy.activeIndex];
+---
+
+<section class="scene scene--light flavors" id="gc-sabores">
+  <div class="gc-container flavors__inner">
+    <div class="flavors__copy">
+      <p class="gc-eyebrow" data-reveal>
+        <span class="gc-eyebrow__num">{copy.index}</span>{copy.eyebrow}
+      </p>
+      <h2 class="flavors__title" data-reveal data-delay="80">
+        <span>{activeFlavor.name.split(" ")[0]}</span>
+        <em>{activeFlavor.name.replace(`${activeFlavor.name.split(" ")[0]} `, "")}</em>
+      </h2>
+      <p class="flavors__body" data-reveal data-delay="140">{activeFlavor.body}</p>
+      <p class="flavors__kicker" data-reveal data-delay="180">{activeFlavor.kicker}</p>
+      <ul class="flavors__badges" data-reveal data-delay="220" aria-label={`Detalles de ${activeFlavor.name}`}>
+        {activeFlavor.badges.map((badge) => <li class="gc-pill">{badge}</li>)}
+      </ul>
+    </div>
+
+    <div class="flavors__visual" aria-hidden="true" data-reveal data-delay="120">
+      <div class="flavors__halo"></div>
+      <div class="flavors__chip"></div>
+    </div>
+  </div>
+</section>

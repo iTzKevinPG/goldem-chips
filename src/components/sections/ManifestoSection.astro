@@ -1,0 +1,43 @@
+---
+import type { SiteCopy } from "@/data/site";
+
+type Props = {
+  copy: SiteCopy["manifesto"];
+};
+
+const { copy } = Astro.props;
+---
+
+<section class="scene scene--dark manifesto" id="gc-manifiesto">
+  <div class="manifesto__chip manifesto__chip--top-left" aria-hidden="true"></div>
+  <div class="manifesto__chip manifesto__chip--top-right" aria-hidden="true"></div>
+  <div class="manifesto__chip manifesto__chip--bottom-left" aria-hidden="true"></div>
+  <div class="manifesto__chip manifesto__chip--bottom-right" aria-hidden="true"></div>
+
+  <div class="gc-container manifesto__inner">
+    <p class="gc-eyebrow manifesto__eyebrow" data-reveal>
+      <span class="gc-eyebrow__num">{copy.index}</span>{copy.eyebrow}
+    </p>
+
+    <div class="manifesto__title" data-reveal data-delay="80">
+      {
+        copy.lines.map((line) => (
+          <span class:list={["manifesto__line", line.accent && "manifesto__line--accent"]}>
+            {line.text}
+          </span>
+        ))
+      }
+    </div>
+
+    <div class="manifesto__facts" data-reveal data-delay="180">
+      {
+        copy.items.map((item) => (
+          <article class="manifesto__fact">
+            <h3>{item.title}</h3>
+            <p>{item.body}</p>
+          </article>
+        ))
+      }
+    </div>
+  </div>
+</section>
