@@ -62,7 +62,11 @@ export default function StickyNavIsland({ brand, navItems, cta }: Props) {
 
       event.preventDefault();
       setIsOpen(false);
-      element.scrollIntoView({ behavior: "smooth", block: "start" });
+      if (window.__lenis) {
+        window.__lenis.scrollTo(element, { offset: -80 });
+      } else {
+        element.scrollIntoView({ behavior: "smooth", block: "start" });
+      }
       history.replaceState(null, "", target);
     };
 

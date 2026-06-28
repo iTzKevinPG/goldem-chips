@@ -2,13 +2,7 @@ import { useEffect } from "react";
 
 export default function RevealControllerIsland() {
   useEffect(() => {
-    const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     const nodes = Array.from(document.querySelectorAll<HTMLElement>("[data-reveal]"));
-
-    if (prefersReducedMotion) {
-      nodes.forEach((node) => node.classList.add("is-visible"));
-      return;
-    }
 
     const observer = new IntersectionObserver(
       (entries) => {

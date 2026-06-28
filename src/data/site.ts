@@ -56,7 +56,7 @@ export const siteCopy = {
   },
   manifesto: {
     index: "01",
-    eyebrow: "Manifiesto",
+    eyebrow: "Nuestra esencia",
     lines: [
       { text: "Hechas a mano.", accent: false },
       { text: "En lotes chiquitos.", accent: true },
@@ -64,7 +64,7 @@ export const siteCopy = {
     ],
   },
   flavors: {
-    index: "01",
+    index: "02",
     eyebrow: "Nuestros sabores",
     activeIndex: 0,
     items: [
@@ -106,7 +106,7 @@ export const siteCopy = {
     ],
   },
   process: {
-    index: "02",
+    index: "03",
     eyebrow: "C\u00f3mo las hacemos",
     title: {
       prefix: "Del corte al empaque,",
@@ -128,7 +128,7 @@ export const siteCopy = {
     ],
   },
   locations: {
-    index: "03",
+    index: "04",
     eyebrow: "D\u00f3nde encontrarnos",
     title: {
       prefix: "Cerquita de ti,",
@@ -153,7 +153,7 @@ export const siteCopy = {
     ],
   },
   faq: {
-    index: "04",
+    index: "05",
     eyebrow: "Antes de pedir",
     title: {
       prefix: "Lo que casi siempre",

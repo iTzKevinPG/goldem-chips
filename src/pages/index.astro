@@ -2,6 +2,7 @@
 import ProcessTimelineIsland from "@/components/islands/ProcessTimelineIsland";
 import RevealControllerIsland from "@/components/islands/RevealControllerIsland";
 import SceneRailIsland from "@/components/islands/SceneRailIsland";
+import SmoothScrollIsland from "@/components/islands/SmoothScrollIsland";
 import StickyNavIsland from "@/components/islands/StickyNavIsland";
 import FaqSection from "@/components/sections/FaqSection.astro";
 import FinalCtaSection from "@/components/sections/FinalCtaSection.astro";
@@ -33,6 +34,7 @@ import BaseLayout from "@/layouts/BaseLayout.astro";
     <FinalCtaSection copy={siteCopy.finalCta} />
   </main>
   <FooterSection copy={siteCopy.footer} brand={siteCopy.brand} />
+  <SmoothScrollIsland client:load />
   <ProcessTimelineIsland client:load />
   <RevealControllerIsland client:load />
 </BaseLayout>

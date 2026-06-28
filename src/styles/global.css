@@ -130,6 +130,10 @@ p {
   transform: translateY(-1px);
 }
 
+.gc-btn:active {
+  transform: translateY(0) scale(0.97);
+}
+
 .gc-btn--primary {
   background: var(--gold);
   color: var(--charcoal);
@@ -212,15 +216,20 @@ p {
   outline-offset: 3px;
 }
 
-@media (prefers-reduced-motion: reduce) {
-  html {
-    scroll-behavior: auto;
-  }
+/* Lenis smooth scroll (momentum) base styles */
+html.lenis,
+html.lenis body {
+  height: auto;
+}
 
-  *,
-  *::before,
-  *::after {
-    animation: none !important;
-    transition: none !important;
-  }
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
 }

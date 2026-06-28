@@ -8,17 +8,6 @@ export default function ProcessTimelineIsland() {
     if (!wrap) return;
 
     const beats = Array.from(wrap.querySelectorAll<HTMLElement>("[data-process-beat]"));
-    const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-
-    if (prefersReducedMotion) {
-      wrap.style.setProperty("--process-progress", "1");
-      wrap.dataset.activeStep = "2";
-      beats.forEach((beat, index) => {
-        beat.classList.add("is-visible");
-        beat.dataset.state = index === beats.length - 1 ? "active" : "done";
-      });
-      return;
-    }
 
     const updateProgress = () => {
       const rect = wrap.getBoundingClientRect();
