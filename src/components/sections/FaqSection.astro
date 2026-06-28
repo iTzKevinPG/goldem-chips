@@ -1,0 +1,35 @@
+---
+import type { SiteCopy } from "@/data/site";
+
+type Props = {
+  copy: SiteCopy["faq"];
+};
+
+const { copy } = Astro.props;
+---
+
+<section class="scene scene--dark faq" id="gc-faq">
+  <div class="gc-container faq__inner">
+    <p class="gc-eyebrow faq__eyebrow" data-reveal>
+      <span class="gc-eyebrow__num">{copy.index}</span>{copy.eyebrow}
+    </p>
+    <h2 class="faq__title" data-reveal data-delay="80">
+      <span>{copy.title.prefix}</span>
+      <em>{copy.title.accent}</em>
+    </h2>
+
+    <div class="faq__list">
+      {
+        copy.items.map((item, index) => (
+          <details class="faq__item" data-reveal data-delay={index * 70}>
+            <summary class="faq__question">
+              <span>{item.q}</span>
+              <span class="faq__mark" aria-hidden="true"></span>
+            </summary>
+            <p class="faq__answer">{item.a}</p>
+          </details>
+        ))
+      }
+    </div>
+  </div>
+</section>

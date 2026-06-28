@@ -1,4 +1,5 @@
 ---
+import FlavorsIsland from "@/components/islands/FlavorsIsland";
 import type { SiteCopy } from "@/data/site";
 
 type Props = {
@@ -6,37 +7,10 @@ type Props = {
 };
 
 const { copy } = Astro.props;
-const activeFlavor = copy.items[copy.activeIndex];
-const [titleLead, ...titleRest] = activeFlavor.name.split(" ");
-const titleAccent = titleRest.join(" ");
 ---
 
 <section class="scene scene--light flavors" id="gc-sabores">
-  <div class="gc-container flavors__inner">
-    <div class="flavors__copy">
-      <p class="gc-eyebrow" data-reveal>
-        <span class="gc-eyebrow__num">{copy.index}</span>{copy.eyebrow}
-      </p>
-      <h2 class="flavors__title" data-reveal data-delay="80">
-        <span>{titleLead}</span>
-        <em>{titleAccent}</em>
-      </h2>
-      <p class="flavors__body" data-reveal data-delay="140">{activeFlavor.body}</p>
-      <ul class="flavors__badges" data-reveal data-delay="220" aria-label={`Detalles de ${activeFlavor.name}`}>
-        {activeFlavor.badges.map((badge) => <li class="gc-pill">{badge}</li>)}
-      </ul>
-    </div>
-
-    <div class="flavors__visual" data-reveal data-delay="120">
-      <div class="flavors__halo"></div>
-      <div class="flavors__card">
-        <div class="flavors__chip-wrap" aria-hidden="true">
-          <div class="flavors__chip">
-            <div class="flavors__chip-rings"></div>
-          </div>
-        </div>
-        <p class="flavors__hover-note">{activeFlavor.kicker}</p>
-      </div>
-    </div>
+  <div class="gc-container">
+    <FlavorsIsland copy={copy} client:visible />
   </div>
 </section>

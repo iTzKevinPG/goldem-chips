@@ -3,6 +3,7 @@ import ProcessTimelineIsland from "@/components/islands/ProcessTimelineIsland";
 import RevealControllerIsland from "@/components/islands/RevealControllerIsland";
 import SceneRailIsland from "@/components/islands/SceneRailIsland";
 import StickyNavIsland from "@/components/islands/StickyNavIsland";
+import FaqSection from "@/components/sections/FaqSection.astro";
 import FinalCtaSection from "@/components/sections/FinalCtaSection.astro";
 import FlavorsSection from "@/components/sections/FlavorsSection.astro";
 import FooterSection from "@/components/sections/FooterSection.astro";
@@ -28,6 +29,7 @@ import BaseLayout from "@/layouts/BaseLayout.astro";
     <FlavorsSection copy={siteCopy.flavors} />
     <ProcessSection copy={siteCopy.process} />
     <WhereSection copy={siteCopy.locations} />
+    <FaqSection copy={siteCopy.faq} />
     <FinalCtaSection copy={siteCopy.finalCta} />
   </main>
   <FooterSection copy={siteCopy.footer} brand={siteCopy.brand} />
