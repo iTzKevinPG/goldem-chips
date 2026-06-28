@@ -34,8 +34,10 @@ const { copy, brand } = Astro.props;
       </h1>
       <p class="hero__lead" data-reveal data-delay="200">{copy.body}</p>
       <div class="hero__actions" data-reveal data-delay="260">
-        <a class="gc-btn gc-btn--primary" href={copy.primaryCta.href}>{copy.primaryCta.label}</a>
-        <a class="gc-btn hero__secondary" href={copy.secondaryCta.href}>
+        <a class="gc-btn gc-btn--primary" href={copy.primaryCta.href} data-smooth-link>
+          {copy.primaryCta.label}
+        </a>
+        <a class="gc-btn hero__secondary" href={copy.secondaryCta.href} data-smooth-link>
           {copy.secondaryCta.label}
         </a>
       </div>
