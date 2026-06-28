@@ -102,7 +102,7 @@ export default function StickyNavIsland({ brand, navItems, cta }: Props) {
           className="site-header__menu"
           aria-expanded={isOpen}
           aria-controls="mobile-nav"
-          aria-label="Abrir menu"
+          aria-label="Abrir menú"
           onClick={() => setIsOpen((value) => !value)}
         >
           <span></span>

@@ -21,8 +21,15 @@ const { copy } = Astro.props;
     <div class="where__grid">
       {
         copy.items.map((item, index) => (
-          <article class="where__card" data-reveal data-delay={160 + index * 70}>
-            <div class="where__seal">{item.title}</div>
+          <article class="where__card" data-reveal data-delay={index * 130}>
+            <div class="where__seal" data-active={index === 1 ? "true" : "false"}>
+              {item.title.split(" ").map((line, lineIndex, lines) => (
+                <>
+                  {line}
+                  {lineIndex < lines.length - 1 && <br />}
+                </>
+              ))}
+            </div>
             <h3>{item.subtitle}</h3>
             <p>{item.body}</p>
           </article>
