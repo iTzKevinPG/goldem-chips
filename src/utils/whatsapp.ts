@@ -27,6 +27,7 @@ export function buildWhatsappUrl(phone: string, text: string): string {
 export function buildOrderMessage(
   copy: SiteCopy["orderForm"],
   contact: OrderContact,
+  size: string,
   lines: OrderLine[],
 ): string {
   const total = lines.reduce((sum, line) => sum + line.quantity, 0);
@@ -44,6 +45,8 @@ export function buildOrderMessage(
     `${copy.fields.phone.label}: ${contact.phone}`,
     `${copy.fields.address.label}: ${contact.address}`,
     `${copy.fields.neighborhood.label}: ${contact.neighborhood}`,
+    "",
+    `${copy.messageSizeLabel}: ${size}`,
     "",
     "Pedido:",
     orderLines,

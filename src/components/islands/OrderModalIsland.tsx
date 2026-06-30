@@ -19,6 +19,7 @@ type ContactErrors = {
   phone?: boolean;
   address?: boolean;
   neighborhood?: boolean;
+  size?: boolean;
   flavors?: boolean;
 };
 
@@ -32,6 +33,7 @@ export default function OrderModalIsland({
 }: Props) {
   const [open, setOpen] = useState(false);
   const [contact, setContact] = useState(emptyContact);
+  const [size, setSize] = useState<string | null>(null);
   const [quantities, setQuantities] = useState<Record<string, number>>({});
   const [errors, setErrors] = useState<ContactErrors>({});
   const firstFieldRef = useRef<HTMLInputElement>(null);
@@ -78,6 +80,7 @@ export default function OrderModalIsland({
       phone: phoneDigits.length < 7,
       address: contact.address.trim() === "",
       neighborhood: contact.neighborhood.trim() === "",
+      size: size === null,
       flavors: total < 1,
     };
     setErrors(next);
@@ -94,6 +97,8 @@ export default function OrderModalIsland({
         quantity: quantities[flavor.id] ?? 0,
       }));
 
+    const sizeLabel = copy.sizes.find((item) => item.id === size)?.label ?? "";
+
     const message = buildOrderMessage(
       copy,
       {
@@ -102,6 +107,7 @@ export default function OrderModalIsland({
         address: contact.address.trim(),
         neighborhood: contact.neighborhood.trim(),
       },
+      sizeLabel,
       lines,
     );
 
@@ -235,6 +241,32 @@ export default function OrderModalIsland({
                     </span>
                   )}
                 </label>
+              </div>
+
+              <div className="order-modal__size">
+                <span className="order-modal__label">{copy.sizeLabel}</span>
+                <div
+                  className="order-modal__size-options"
+                  role="radiogroup"
+                  aria-label={copy.sizeLabel}
+                >
+                  {copy.sizes.map((item) => (
+                    <button
+                      key={item.id}
+                      type="button"
+                      role="radio"
+                      aria-checked={size === item.id}
+                      className="order-modal__size-option"
+                      data-active={size === item.id ? "true" : "false"}
+                      onClick={() => setSize(item.id)}
+                    >
+                      {item.label}
+                    </button>
+                  ))}
+                </div>
+                {errors.size && (
+                  <span className="order-modal__error">{copy.errors.size}</span>
+                )}
               </div>
 
               <div className="order-modal__flavors">

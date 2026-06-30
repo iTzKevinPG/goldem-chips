@@ -216,6 +216,11 @@ export const siteCopy = {
       address: { label: "Dirección", placeholder: "Calle, número, apto…" },
       neighborhood: { label: "Barrio", placeholder: "¿En qué barrio estás?" },
     },
+    sizeLabel: "Elige la presentación",
+    sizes: [
+      { id: "60g", label: "60 g" },
+      { id: "100g", label: "100 g" },
+    ],
     flavorsLabel: "Elige tus sabores",
     flavorsHint: "Toca + para sumar paquetes de cada sabor.",
     totalLabel: "Total",
@@ -228,9 +233,11 @@ export const siteCopy = {
       phone: "Escribe un celular válido (solo números).",
       address: "Escribe tu dirección.",
       neighborhood: "Escribe tu barrio.",
+      size: "Elige una presentación.",
       flavors: "Elige al menos un sabor.",
     },
     messageHeader: "Hola Goldem Chip's, quiero hacer un pedido:",
+    messageSizeLabel: "Presentación",
   },
   footer: {
     note: "\u00a9 Goldem Chip's \u00b7 El verdadero sabor \u00b7 Hechas a mano, en lotes chiquitos.",
