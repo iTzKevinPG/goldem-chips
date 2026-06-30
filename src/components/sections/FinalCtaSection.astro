@@ -1,11 +1,15 @@
 ---
+import OrderModalIsland from "@/components/islands/OrderModalIsland";
 import type { SiteCopy } from "@/data/site";
 
 type Props = {
   copy: SiteCopy["finalCta"];
+  orderForm: SiteCopy["orderForm"];
+  flavors: SiteCopy["flavors"]["items"];
+  phone: string;
 };
 
-const { copy } = Astro.props;
+const { copy, orderForm, flavors, phone } = Astro.props;
 ---
 
 <section class="scene scene--accent final-cta" id="gc-final">
@@ -18,7 +22,13 @@ const { copy } = Astro.props;
     </h2>
     <p class="final-cta__body" data-reveal data-delay="140">{copy.body}</p>
     <div class="final-cta__actions" data-reveal data-delay="220">
-      <a class="gc-btn final-cta__primary" href={copy.primary.href}>{copy.primary.label}</a>
+      <OrderModalIsland
+        copy={orderForm}
+        flavors={flavors}
+        phone={phone}
+        triggerLabel={copy.primary.label}
+        client:visible
+      />
       <a class="gc-btn final-cta__secondary" href={copy.secondary.href}>{copy.secondary.label}</a>
     </div>
   </div>

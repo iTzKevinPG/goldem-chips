@@ -1,10 +1,36 @@
 @import "./tokens.css";
 @import "./motion.css";
 @import "./sections.css";
+@import "./order-modal.css";
 
 html {
   scroll-behavior: smooth;
   scroll-padding-top: 5rem;
+  /* Scrollbar global fino y discreto (Firefox) */
+  scrollbar-width: thin;
+  scrollbar-color: rgba(105, 49, 39, 0.25) transparent;
+}
+
+/* Scrollbar global fino y discreto (Chrome/Safari/Edge) */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(105, 49, 39, 0.2);
+  border-radius: var(--radius-pill);
+  border: 3px solid transparent;
+  background-clip: padding-box;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(105, 49, 39, 0.38);
+  background-clip: padding-box;
 }
 
 body {

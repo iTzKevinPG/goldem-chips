@@ -31,7 +31,12 @@ import BaseLayout from "@/layouts/BaseLayout.astro";
     <ProcessSection copy={siteCopy.process} />
     <WhereSection copy={siteCopy.locations} />
     <FaqSection copy={siteCopy.faq} />
-    <FinalCtaSection copy={siteCopy.finalCta} />
+    <FinalCtaSection
+      copy={siteCopy.finalCta}
+      orderForm={siteCopy.orderForm}
+      flavors={siteCopy.flavors.items}
+      phone={siteCopy.whatsapp.phone}
+    />
   </main>
   <FooterSection copy={siteCopy.footer} brand={siteCopy.brand} />
   <SmoothScrollIsland client:load />

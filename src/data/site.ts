@@ -26,6 +26,9 @@ export const siteCopy = {
     slogan: "El verdadero sabor.",
     logo: "/logo-goldem-chips.png",
   },
+  whatsapp: {
+    phone: "573125084418",
+  },
   nav: [
     { href: "#gc-sabores", label: "Sabores" },
     { href: "#gc-como", label: "Proceso" },
@@ -201,6 +204,33 @@ export const siteCopy = {
       href: "https://wa.me/573125084418?text=Hola%2C%20pregunto%20por%20precios%20de%20mayoreo",
       label: "Pregunta por mayoreo",
     },
+  },
+  orderForm: {
+    triggerLabel: "Pídelas por WhatsApp",
+    title: "Arma tu pedido",
+    subtitle:
+      "Déjanos tus datos y elige tus sabores. Te llega todo en un solo mensaje, sin tanta vuelta.",
+    fields: {
+      name: { label: "Nombre", placeholder: "¿Cómo te llamas?" },
+      phone: { label: "Celular", placeholder: "Ej: 3125084418" },
+      address: { label: "Dirección", placeholder: "Calle, número, apto…" },
+      neighborhood: { label: "Barrio", placeholder: "¿En qué barrio estás?" },
+    },
+    flavorsLabel: "Elige tus sabores",
+    flavorsHint: "Toca + para sumar paquetes de cada sabor.",
+    totalLabel: "Total",
+    packagesWord: { one: "paquete", many: "paquetes" },
+    submitLabel: "Enviar por WhatsApp",
+    cancelLabel: "Cancelar",
+    closeLabel: "Cerrar",
+    errors: {
+      name: "Escribe tu nombre.",
+      phone: "Escribe un celular válido (solo números).",
+      address: "Escribe tu dirección.",
+      neighborhood: "Escribe tu barrio.",
+      flavors: "Elige al menos un sabor.",
+    },
+    messageHeader: "Hola Goldem Chip's, quiero hacer un pedido:",
   },
   footer: {
     note: "\u00a9 Goldem Chip's \u00b7 El verdadero sabor \u00b7 Hechas a mano, en lotes chiquitos.",
